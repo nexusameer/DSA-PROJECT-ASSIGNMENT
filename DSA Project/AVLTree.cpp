@@ -1,91 +1,57 @@
+// AVLTree.cpp
 #include "AVLTree.h"
-#include <iostream>
-#include <fstream>
-#include <algorithm>  // For std::max
+#include <algorithm>
 
-// Node Constructor
-AVLTree::Node::Node(const WordNode& wordData)
-    : data(wordData), left(nullptr), right(nullptr), height(1) {}
-
-// Constructor
 AVLTree::AVLTree() : root(nullptr) {}
 
-// Helper function to get height of a node
 int AVLTree::getHeight(Node* node) {
     return node == nullptr ? 0 : node->height;
 }
 
-// Helper function to get the balance factor of a node
 int AVLTree::getBalanceFactor(Node* node) {
     return node == nullptr ? 0 : getHeight(node->left) - getHeight(node->right);
 }
 
-// Rotate right (for left-heavy trees)
 AVLTree::Node* AVLTree::rotateRight(Node* y) {
     Node* x = y->left;
     Node* T2 = x->right;
-
-    // Perform rotation
     x->right = y;
     y->left = T2;
-
-    // Update heights
     y->height = std::max(getHeight(y->left), getHeight(y->right)) + 1;
     x->height = std::max(getHeight(x->left), getHeight(x->right)) + 1;
-
     return x;
 }
 
-// Rotate left (for right-heavy trees)
 AVLTree::Node* AVLTree::rotateLeft(Node* x) {
     Node* y = x->right;
     Node* T2 = y->left;
-
-    // Perform rotation
     y->left = x;
     x->right = T2;
-
-    // Update heights
     x->height = std::max(getHeight(x->left), getHeight(x->right)) + 1;
     y->height = std::max(getHeight(y->left), getHeight(y->right)) + 1;
-
     return y;
 }
 
-// Insert function with balancing logic
 AVLTree::Node* AVLTree::insert(Node* node, const WordNode& data) {
-    // Perform standard BST insertion
-    if (node == nullptr)
-        return new Node(data);
-
+    if (node == nullptr) return new Node(data);
     if (data.word < node->data.word)
         node->left = insert(node->left, data);
     else if (data.word > node->data.word)
         node->right = insert(node->right, data);
     else
-        return node;  // Duplicate words are not allowed
+        return node;
 
-    // Update height of this ancestor node
     node->height = 1 + std::max(getHeight(node->left), getHeight(node->right));
-
-    // Get the balance factor and balance the node
     int balance = getBalanceFactor(node);
 
-    // Left Left Case
     if (balance > 1 && data.word < node->left->data.word)
         return rotateRight(node);
-
-    // Right Right Case
     if (balance < -1 && data.word > node->right->data.word)
         return rotateLeft(node);
-
-    // Left Right Case
     if (balance > 1 && data.word > node->left->data.word) {
         node->left = rotateLeft(node->left);
         return rotateRight(node);
     }
-
-    // Right Left Case
     if (balance < -1 && data.word < node->right->data.word) {
         node->right = rotateRight(node->right);
         return rotateLeft(node);
@@ -94,7 +60,50 @@ AVLTree::Node* AVLTree::insert(Node* node, const WordNode& data) {
     return node;
 }
 
-// Find the node with the minimum value
+AVLTree::Node* AVLTree::deleteNode(Node* root, const std::string& word) {
+    if (root == nullptr) return root;
+    if (word < root->data.word)
+        root->left = deleteNode(root->left, word);
+    else if (word > root->data.word)
+        root->right = deleteNode(root->right, word);
+    else {
+        if ((root->left == nullptr) || (root->right == nullptr)) {
+            Node* temp = root->left ? root->left : root->right;
+            if (temp == nullptr) {
+                temp = root;
+                root = nullptr;
+            }
+            else {
+                *root = *temp;
+            }
+            delete temp;
+        }
+        else {
+            Node* temp = findMinValueNode(root->right);
+            root->data = temp->data;
+            root->right = deleteNode(root->right, temp->data.word);
+        }
+    }
+    if (root == nullptr) return root;
+
+    root->height = 1 + std::max(getHeight(root->left), getHeight(root->right));
+    int balance = getBalanceFactor(root);
+
+    if (balance > 1 && getBalanceFactor(root->left) >= 0)
+        return rotateRight(root);
+    if (balance > 1 && getBalanceFactor(root->left) < 0) {
+        root->left = rotateLeft(root->left);
+        return rotateRight(root);
+    }
+    if (balance < -1 && getBalanceFactor(root->right) <= 0)
+        return rotateLeft(root);
+    if (balance < -1 && getBalanceFactor(root->right) > 0) {
+        root->right = rotateRight(root->right);
+        return rotateLeft(root);
+    }
+    return root;
+}
+
 AVLTree::Node* AVLTree::findMinValueNode(Node* node) {
     Node* current = node;
     while (current && current->left != nullptr)
@@ -102,77 +111,7 @@ AVLTree::Node* AVLTree::findMinValueNode(Node* node) {
     return current;
 }
 
-// Delete a word from the AVL tree
-AVLTree::Node* AVLTree::deleteNode(Node* root, const std::string& word) {
-    if (root == nullptr)
-        return root;
-
-    // Perform standard BST deletion
-    if (word < root->data.word)
-        root->left = deleteNode(root->left, word);
-    else if (word > root->data.word)
-        root->right = deleteNode(root->right, word);
-    else {
-        // Node with only one child or no child
-        if ((root->left == nullptr) || (root->right == nullptr)) {
-            Node* temp = root->left ? root->left : root->right;
-
-            // No child case
-            if (temp == nullptr) {
-                temp = root;
-                root = nullptr;
-            }
-            else  // One child case
-                *root = *temp;  // Copy the contents of the non-empty child
-            delete temp;
-        }
-        else {
-            // Node with two children: Get the inorder successor (smallest in the right subtree)
-            Node* temp = findMinValueNode(root->right);
-
-            // Copy the inorder successor's data to this node
-            root->data = temp->data;
-
-            // Delete the inorder successor
-            root->right = deleteNode(root->right, temp->data.word);
-        }
-    }
-
-    // If the tree had only one node then return
-    if (root == nullptr)
-        return root;
-
-    // Update height of the current node
-    root->height = 1 + std::max(getHeight(root->left), getHeight(root->right));
-
-    // Get balance factor and balance the node
-    int balance = getBalanceFactor(root);
-
-    // Left Left Case
-    if (balance > 1 && getBalanceFactor(root->left) >= 0)
-        return rotateRight(root);
-
-    // Left Right Case
-    if (balance > 1 && getBalanceFactor(root->left) < 0) {
-        root->left = rotateLeft(root->left);
-        return rotateRight(root);
-    }
-
-    // Right Right Case
-    if (balance < -1 && getBalanceFactor(root->right) <= 0)
-        return rotateLeft(root);
-
-    // Right Left Case
-    if (balance < -1 && getBalanceFactor(root->right) > 0) {
-        root->right = rotateRight(root->right);
-        return rotateLeft(root);
-    }
-
-    return root;
-}
-
-// In-order traversal to display the tree
-void AVLTree::inorderDisplay(Node* node) {
+void AVLTree::inorderDisplay(Node* node) const {
     if (node != nullptr) {
         inorderDisplay(node->left);
         std::cout << node->data.word << ": " << node->data.meaning << std::endl;
@@ -180,52 +119,46 @@ void AVLTree::inorderDisplay(Node* node) {
     }
 }
 
-// Helper function to save the tree to a file
-void AVLTree::saveToFileRecursive(Node* node, std::ofstream& outputFile) {
+void AVLTree::saveToFileRecursive(Node* node, std::ofstream& outputFile) const {
     if (node != nullptr) {
-        outputFile << node->data.word << std::endl;
-        outputFile << node->data.meaning << std::endl;
+        outputFile << node->data.word << '\n' << node->data.meaning << '\n';
         saveToFileRecursive(node->left, outputFile);
         saveToFileRecursive(node->right, outputFile);
     }
 }
 
-// In-order traversal to gather all words in the AVL tree
-void AVLTree::inorderWords(Node* node, std::vector<std::string>& words) {
+void AVLTree::inorderWords(Node* node, std::vector<std::string>& words) const {
     if (node != nullptr) {
         inorderWords(node->left, words);
-        words.push_back(node->data.word);  // Add word to the list
+        words.push_back(node->data.word);
         inorderWords(node->right, words);
     }
 }
 
-// Public method to insert a word
 void AVLTree::insert(const WordNode& data) {
     root = insert(root, data);
 }
 
-// Public method to delete a word
 void AVLTree::deleteWord(const std::string& word) {
     root = deleteNode(root, word);
 }
 
-// Public method to display all words in the tree
-void AVLTree::display() {
+void AVLTree::display() const {
     inorderDisplay(root);
 }
 
-// Public method to save the dictionary to a file
-void AVLTree::saveToFile(std::ofstream& outputFile) {
+void AVLTree::saveToFile(const std::string& filename) const {
+    std::ofstream outputFile(filename);
     if (outputFile.is_open()) {
         saveToFileRecursive(root, outputFile);
+        outputFile.close();
     }
     else {
-        std::cout << "Error saving dictionary to file.\n";
+        std::cerr << "Error saving dictionary to file." << std::endl;
     }
 }
 
-// Public method to search for a word
-void AVLTree::searchWord(const std::string& word) {
+void AVLTree::searchWord(const std::string& word) const {
     Node* current = root;
     while (current != nullptr) {
         if (word == current->data.word) {
@@ -239,11 +172,10 @@ void AVLTree::searchWord(const std::string& word) {
             current = current->right;
         }
     }
-    std::cout << "Word not found.\n";
+    std::cout << "Word not found." << std::endl;
 }
 
-// Public method to get all words from the tree
-std::vector<std::string> AVLTree::getAllWords() {
+std::vector<std::string> AVLTree::getAllWords() const {
     std::vector<std::string> words;
     inorderWords(root, words);
     return words;

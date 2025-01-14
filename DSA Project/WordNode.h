@@ -1,26 +1,27 @@
+// WordNode.h
+#ifndef WORDNODE_H
+#define WORDNODE_H
 
 #include <string>
-#include <iostream>
-#include <string>
-
-using namespace std;
-
+#include <stdexcept>
 
 class WordNode {
 public:
-    string word;
-    string meaning;
-    // Add validation and constructor improvements
-    WordNode(string w, string m) {
+    std::string word;
+    std::string meaning;
+
+    // Constructor with validation
+    WordNode(const std::string& w, const std::string& m) {
         if (w.empty()) {
-            throw invalid_argument("Word cannot be empty");
+            throw std::invalid_argument("Word cannot be empty");
         }
-        word = std::move(w);
-        meaning = std::move(m);
+        word = w;
+        meaning = m;
     }
 
-    // Add useful methods
     bool isEmpty() const {
         return word.empty() || meaning.empty();
     }
 };
+
+#endif  // WORDNODE_H

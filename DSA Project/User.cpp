@@ -1,11 +1,24 @@
 #include "User.h"
+#include <cstring>
 #include <iostream>
 #include <stdexcept>  // For exception handling
 
-// Constructor
-User::User() {
-    // Initialize configuration if necessary
+
+void User::loadDictionaryFromFile(const std::string& filename) {
+    std::ifstream inputFile(filename);
+    if (!inputFile.is_open()) {
+        std::cout << "Failed to load dictionary file.\n";
+        return;
+    }
+
+    std::string word, meaning;
+    while (std::getline(inputFile, word) && std::getline(inputFile, meaning)) {
+        WordNode wordNode(word, meaning);
+        tree.insert(wordNode); // Insert into the AVLTree
+    }
+    inputFile.close();
 }
+
 
 // Set search configuration
 void User::setSearchConfig(int maxSugg, int threshold, bool caseSens) {
@@ -37,7 +50,7 @@ void User::suggestWords(const std::string& searchWord) {
     std::vector<std::string> suggestions;
     int threshold = config.levenshteinThreshold;
 
-    std::vector<std::string> allWords = getAllWords();  // Call inherited AVLTree function
+    std::vector<std::string> allWords = tree.getAllWords();  // Call AVLTree method for words
 
     for (const auto& word : allWords) {
         if (levenshteinDistance(word, searchWord) <= threshold) {
@@ -50,23 +63,32 @@ void User::suggestWords(const std::string& searchWord) {
     }
     else {
         std::cout << "Suggestions for '" << searchWord << "':\n";
-        for (const auto& word : suggestions) {
-            std::cout << word << "\n";
+        for (size_t i = 0; i < suggestions.size() && i < static_cast<size_t>(config.maxSuggestions); ++i) {
+            std::cout << suggestions[i] << "\n";
         }
     }
 }
 
 void User::searchAndSuggest(const std::string& wordToSearch) {
-    std::cout << "Searching for the word: " << wordToSearch << std::endl;
+    // First, load the dictionary from the file if it isn't already loaded.
+    if (tree.getAllWords().empty()) {
+        loadDictionaryFromFile("dictionary.txt");
+    }
 
-    bool found = searchWord(wordToSearch);  // Assuming `searchWord` now returns a bool
+    bool found = false;
+    std::vector<std::string> allWords = tree.getAllWords();  // Get words from AVL tree
+
+    for (const auto& word : allWords) {
+        if ((config.caseSensitive ? word == wordToSearch
+            : _stricmp(word.c_str(), wordToSearch.c_str()) == 0)) {
+            std::cout << "Found: " << word << "\n";
+            found = true;
+            break;
+        }
+    }
 
     if (!found) {
         std::cout << "Word not found.\n";
-        std::cout << "\nIf you meant one of the following, try again:\n";
-        suggestWords(wordToSearch);
-    }
-    else {
-        std::cout << "Word found.\n";
+        suggestWords(wordToSearch);  // Provide suggestions based on Levenshtein distance
     }
 }

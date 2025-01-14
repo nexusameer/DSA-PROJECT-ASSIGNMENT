@@ -1,75 +1,132 @@
+#include "AdminApp.h"
+#include "User.h"
 #include <iostream>
-#include "AVLTree.h"  // Include the header for AVLTree class
-#include "User.h"     // Include the header for User class
-#include "AdminApp.h" // Include the header for AdminApp class
-
-// Function to display the main menu for the user
-void displayUserMenu() {
-    std::cout << "\nUser Menu:\n";
-    std::cout << "1. Search for a Word\n";
-    std::cout << "2. Display All Words\n";
-    std::cout << "3. Exit\n";
-    std::cout << "Enter your choice: ";
-}
-
-// Function to display the admin menu
-void displayAdminMenu() {
-    std::cout << "\nAdmin Menu:\n";
-    std::cout << "1. Add Word\n";
-    std::cout << "2. Delete Word\n";
-    std::cout << "3. Display All Words\n";
-    std::cout << "4. Exit\n";
-    std::cout << "Enter your choice: ";
-}
 
 int main() {
-    int roleChoice;
+    AVLTree sharedTree;  // Shared instance for admin and user operations
 
-    std::cout << "Enter 1 for Admin Panel or 2 for User Panel: ";
-    std::cin >> roleChoice;
-    std::cin.ignore(); // To clear the buffer
+    AdminApp adminApp(sharedTree);  // Pass shared tree to AdminApp
+    User userApp(sharedTree);       // Pass shared tree to User
 
-    if (roleChoice == 1) {
-        // Admin Panel
-        AdminApp adminApp;
-        adminApp.run(); // Run the admin app's functionality
-    }
-    else if (roleChoice == 2) {
-        // User Panel
-        AVLTree dictionary;  // Create an instance of the AVLTree for the user
-        int userChoice;
+    int mainChoice;
 
-        do {
-            displayUserMenu();
-            std::cin >> userChoice;
-            std::cin.ignore();  // To clear the input buffer
+    do {
+        std::cout << "\nMain Menu:\n";
+        std::cout << "1. Admin Panel\n";
+        std::cout << "2. User Panel\n";
+        std::cout << "3. Exit\n";
+        std::cout << "Enter your choice: ";
+        std::cin >> mainChoice;
+        std::cin.ignore();
 
-            switch (userChoice) {
-            case 1: {
-                // Search for a word in the dictionary
-                std::string word;
-                std::cout << "Enter the word to search: ";
-                std::getline(std::cin, word);
-                dictionary.searchWord(word);
-                break;
-            }
-            case 2: {
-                // Display all words in the dictionary
-                std::cout << "Displaying all words in the dictionary:\n";
-                dictionary.display();
-                break;
-            }
-            case 3:
-                std::cout << "Exiting the program.\n";
-                break;
-            default:
-                std::cout << "Invalid choice. Please try again.\n";
-            }
-        } while (userChoice != 3);  // User panel continues until they choose to exit
-    }
-    else {
-        std::cout << "Invalid choice. Exiting.\n";
-    }
+        switch (mainChoice) {
+        case 1: {
+            int adminChoice;
+            std::string word, meaning;
+
+            do {
+                std::cout << "\nAdmin Menu:\n";
+                std::cout << "1. Add Word\n";
+                std::cout << "2. Delete Word\n";
+                std::cout << "3. Display All Words\n";
+                std::cout << "4. Save and Exit Admin Panel\n";
+                std::cout << "Enter your choice: ";
+                std::cin >> adminChoice;
+                std::cin.ignore();
+
+                switch (adminChoice) {
+                case 1:
+                    std::cout << "Enter word: ";
+                    getline(std::cin, word);
+                    std::cout << "Enter meaning: ";
+                    getline(std::cin, meaning);
+                    adminApp.addWord(word, meaning);
+                    break;
+
+                case 2:
+                    std::cout << "Enter word to delete: ";
+                    getline(std::cin, word);
+                    adminApp.deleteWord(word);
+                    break;
+
+                case 3:
+                    std::cout << "\nDictionary Words:\n";
+                    adminApp.displayAllWords();
+                    break;
+
+                case 4:
+                    adminApp.saveDictionary("dictionary.txt");
+                    std::cout << "Dictionary saved. Exiting Admin Panel.\n";
+                    break;
+
+                default:
+                    std::cout << "Invalid choice. Try again.\n";
+                }
+
+            } while (adminChoice != 4);
+            break;
+        }
+
+        case 2: {
+            int userChoice;
+            std::string searchWord;
+
+            do {
+                std::cout << "\nUser Menu:\n";
+                std::cout << "1. Search Word\n";
+                std::cout << "2. Configure Search Settings\n";
+                std::cout << "3. Exit User Panel\n";
+                std::cout << "Enter your choice: ";
+                std::cin >> userChoice;
+                std::cin.ignore();
+
+                switch (userChoice) {
+                case 1:
+                    std::cout << "Enter word to search: ";
+                    getline(std::cin, searchWord);
+                    userApp.searchAndSuggest(searchWord);
+                    break;
+
+                case 2: {
+                    int maxSuggestions, threshold;
+                    bool caseSensitive;
+                    char caseChoice;
+
+                    std::cout << "Enter maximum number of suggestions: ";
+                    std::cin >> maxSuggestions;
+                    std::cout << "Enter Levenshtein distance threshold: ";
+                    std::cin >> threshold;
+                    std::cout << "Case sensitive search? (y/n): ";
+                    std::cin >> caseChoice;
+                    std::cin.ignore();
+
+                    caseSensitive = (caseChoice == 'y' || caseChoice == 'Y');
+                    userApp.setSearchConfig(maxSuggestions, threshold, caseSensitive);
+                    std::cout << "Search configuration updated.\n";
+                    break;
+                }
+
+                case 3:
+                    std::cout << "Exiting User Panel.\n";
+                    break;
+
+                default:
+                    std::cout << "Invalid choice. Try again.\n";
+                }
+
+            } while (userChoice != 3);
+            break;
+        }
+
+        case 3:
+            std::cout << "Exiting application.\n";
+            break;
+
+        default:
+            std::cout << "Invalid choice. Try again.\n";
+        }
+
+    } while (mainChoice != 3);
 
     return 0;
 }
