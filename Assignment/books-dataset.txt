@@ -1,0 +1,183 @@
+ISBN;Title;Author;Publisher;Genre
+000-0-0000000-0-0;Fundamentals of Wavelets;Goswami, Jaideva;Wiley;tech
+000-0-0000001-0-0;Data Smart;Foreman, John;Wiley;tech
+000-0-0000002-0-0;God Created the Integers;Hawking, Stephen;Penguin;tech
+000-0-0000003-0-0;Superfreakonomics;Dubner, Stephen;HarperCollins;science
+000-0-0000003-0-1;Orientalism;Said, Edward;Penguin;nonfiction
+000-0-0000003-0-2;Nature of Statistical Learning Theory, The;Vapnik, Vladimir;Springer;tech
+000-0-0000003-0-3;Integration of the Indian States;Menon, V P;Orient Blackswan;nonfiction
+000-0-0000003-0-4;Drunkard's Walk, The;Mlodinow, Leonard;Penguin;science
+000-0-0000003-0-5;Image Processing & Mathematical Morphology;Shih, Frank;CRC;tech
+000-0-0000003-0-6;How to Think Like Sherlock Holmes;Konnikova, Maria;Penguin;nonfiction
+000-0-0000003-0-7;Data Scientists at Work;Sebastian Gutierrez;Apress;tech
+000-0-0000003-0-8;Slaughterhouse Five;Vonnegut, Kurt;Random House;fiction
+000-0-0000003-0-9;Birth of a Theorem;Villani, Cedric;Bodley Head;science
+000-0-0000004-0-1;Structure & Interpretation of Computer Programs;Sussman, Gerald;MIT Press;tech
+000-0-0000004-0-2;Age of Wrath, The;Eraly, Abraham;Penguin;nonfiction
+000-0-0000004-0-3;Trial, The;Kafka, Frank;Random House;fiction
+000-0-0000004-0-4;Statistical Decision Theory';Pratt, John;MIT Press;tech
+000-0-0000004-0-5;Data Mining Handbook;Nisbet, Robert;Apress;tech
+000-0-0000004-0-6;New Machiavelli, The;Wells, H. G.;Penguin;fiction
+000-0-0000004-0-7;Physics & Philosophy;Heisenberg, Werner;Penguin;philosophy
+000-0-0000004-0-8;Making Software;Oram, Andy;O'Reilly;tech
+000-0-0000004-0-9;Analysis, Vol I;Tao, Terence;HBA;tech
+000-0-0000005-0-1;Machine Learning for Hackers;Conway, Drew;O'Reilly;tech
+000-0-0000005-0-2;Signal and the Noise, The;Silver, Nate;Penguin;tech
+000-0-0000005-0-3;Python for Data Analysis;McKinney, Wes;O'Reilly;tech
+000-0-0000005-0-4;Introduction to Algorithms;Cormen, Thomas;MIT Press;tech
+000-0-0000005-0-5;Beautiful and the Damned, The;Deb, Siddhartha;Penguin;nonfiction
+000-0-0000005-0-6;Outsider, The;Camus, Albert;Penguin;fiction
+000-0-0000005-0-7;Complete Sherlock Holmes, The - Vol I;Doyle, Arthur Conan;Random House;fiction
+000-0-0000005-0-8;Complete Sherlock Holmes, The - Vol II;Doyle, Arthur Conan;Random House;fiction
+000-0-0000005-0-9;Wealth of Nations, The;Smith, Adam;Random House;science
+000-0-0000060-0-1;Pillars of the Earth, The;Follett, Ken;Random House;fiction
+000-0-0000060-0-2;Mein Kampf;Hitler, Adolf;Rupa;nonfiction
+000-0-0000060-0-3;Tao of Physics, The;Capra, Fritjof;Penguin;science
+000-0-0000060-0-4;Surely You're Joking Mr Feynman;Feynman, Richard;Random House;science
+000-0-0000060-0-5;Farewell to Arms, A;Hemingway, Ernest;Rupa;fiction
+000-0-0000060-0-6;Veteran, The;Forsyth, Frederick;Transworld;fiction
+000-0-0000060-0-7;False Impressions;Archer, Jeffery;Pan;fiction
+000-0-0000060-0-8;Last Lecture, The;Pausch, Randy;Hyperion;nonfiction
+000-0-0000060-0-9;Return of the Primitive;Rand, Ayn;Penguin;philosophy
+000-0-0000061-0-1;Jurassic Park;Crichton, Michael;Random House;fiction
+000-0-0000061-0-2;Russian Journal, A;Steinbeck, John;Penguin;nonfiction
+000-0-0000061-0-3;Tales of Mystery and Imagination;Poe, Edgar Allen;HarperCollins;fiction
+000-0-0000061-0-4;Freakonomics;Dubner, Stephen;Penguin;science
+000-0-0000061-0-5;Hidden Connections, The;Capra, Fritjof;HarperCollins;science
+000-0-0000061-0-6;Story of Philosophy, The;Durant, Will;Pocket;philosophy
+000-0-0000061-0-7;Asami Asami;Deshpande, P L;Mauj;fiction
+000-0-0000061-0-8;Journal of a Novel;Steinbeck, John;Penguin;fiction
+000-0-0000061-0-9;Once There Was a War;Steinbeck, John;Penguin;nonfiction
+000-0-0000062-0-1;Moon is Down, The;Steinbeck, John;Penguin;fiction
+000-0-0000062-0-2;Brethren, The;Grisham, John;Random House;fiction
+000-0-0000062-0-3;In a Free State;Naipaul, V. S.;Rupa;fiction
+000-0-0000062-0-4;Catch 22;Heller, Joseph;Random House;fiction
+000-0-0000062-0-5;Complete Mastermind, The;BBC;BBC;nonfiction
+000-0-0000062-0-6;Dylan on Dylan;Dylan, Bob;Random House;nonfiction
+000-0-0000062-0-7;Soft Computing & Intelligent Systems;Gupta, Madan;Elsevier;tech
+000-0-0000062-0-8;Textbook of Economic Theory;Stonier, Alfred;Pearson;tech
+000-0-0000062-0-9;Econometric Analysis;Greene, W. H.;Pearson;tech
+000-0-0000081-0-1;Learning OpenCV;Bradsky, Gary;O'Reilly;tech
+000-0-0000081-0-2;Data Structures Using C & C++;Tanenbaum, Andrew;Prentice Hall;tech
+000-0-0000081-0-3;Computer Vision, A Modern Approach;Forsyth, David;Pearson;tech
+000-0-0000081-0-4;Principles of Communication Systems;Taub, Schilling;TMH;tech
+000-0-0000081-0-5;Let Us C;Kanetkar, Yashwant;Prentice Hall;tech
+000-0-0000081-0-6;Amulet of Samarkand, The;Stroud, Jonathan;Random House;fiction
+000-0-0000081-0-7;Crime and Punishment;Dostoevsky, Fyodor;Penguin;fiction
+000-0-0000081-0-8;Angels & Demons;Brown, Dan;Random House;fiction
+000-0-0000081-0-9;Argumentative Indian, The;Sen, Amartya;Picador;nonfiction
+000-0-0000082-0-1;Sea of Poppies;Ghosh, Amitav;Penguin;fiction
+000-0-0000082-0-2;Idea of Justice, The;Sen, Amartya;Penguin;philosophy
+000-0-0000082-0-3;Raisin in the Sun, A;Hansberry, Lorraine;Penguin;fiction
+000-0-0000082-0-4;All the President's Men;Woodward, Bob;Random House;nonfiction
+000-0-0000082-0-5;Prisoner of Birth, A;Archer, Jeffery;Pan;fiction
+000-0-0000082-0-6;Scoop!;Nayar, Kuldip;HarperCollins;nonfiction
+000-0-0000082-0-7;Ahe Manohar Tari;Deshpande, Sunita;Mauj;nonfiction
+000-0-0000082-0-8;Last Mughal, The;Dalrymple, William;Penguin;nonfiction
+000-0-0000082-0-9;Social Choice & Welfare, Vol 39 No. 1;Various;Springer;tech
+100-0-0000091-0-1;Radiowaril Bhashane & Shrutika;Deshpande, P L;Mauj;nonfiction
+100-0-0000091-0-2;Gun Gayin Awadi;Deshpande, P L;Mauj;nonfiction
+100-0-0000091-0-3;Aghal Paghal;Deshpande, P L;Mauj;nonfiction
+100-0-0000091-0-4;Maqta-e-Ghalib;Garg, Sanjay;Mauj;nonfiction
+100-0-0000091-0-7;India from Midnight to Milennium;Tharoor, Shashi;Penguin;nonfiction
+100-0-0000091-0-9;Great Indian Novel, The;Tharoor, Shashi;Penguin;fiction
+200-0-0000091-0-1;O Jerusalem!;Lapierre, Dominique;vikas;nonfiction
+200-0-0000091-0-2;City of Joy, The;Lapierre, Dominique;vikas;fiction
+200-0-0000091-0-3;Freedom at Midnight;Lapierre, Dominique;vikas;nonfiction
+200-0-0000091-0-4;Winter of Our Discontent, The;Steinbeck, John;Penguin;fiction
+200-0-0000091-0-5;On Education;Russell, Bertrand;Routledge;philosophy
+200-0-0000091-0-6;Free Will;Harris, Sam;FreePress;nonfiction
+200-0-0000091-0-7;Bookless in Baghdad;Tharoor, Shashi;Penguin;nonfiction
+200-0-0000091-0-8;Case of the Lame Canary, The;Gardner, Earle Stanley;Penguin;fiction
+200-0-0000091-0-9;Theory of Everything, The;Hawking, Stephen;Jaico;science
+200-0-0000211-0-1;New Markets & Other Essays;Drucker, Peter;Penguin;science
+200-0-0000211-0-2;Electric Universe;Bodanis, David;Penguin;science
+200-0-0000211-0-3;Hunchback of Notre Dame, The;Hugo, Victor;Random House;fiction
+200-0-0000211-0-4;Burning Bright;Steinbeck, John;Penguin;fiction
+200-0-0000211-0-5;Age of Discontuinity, The;Drucker, Peter;Random House;nonfiction
+200-0-0000211-0-6;Doctor in the Nude;Gordon, Richard;Penguin;fiction
+200-0-0000211-0-7;Down and Out in Paris & London;Orwell, George;Penguin;nonfiction
+200-0-0000211-0-8;Identity & Violence;Sen, Amartya;Penguin;philosophy
+200-0-0000211-0-9;Beyond the Three Seas;Dalrymple, William;Random House;nonfiction
+300-0-0000214-0-3;Maugham's Collected Short Stories, Vol 3;Maugham, William S;Vintage;fiction
+300-0-0000214-0-5;Ashenden of The British Agent;Maugham, William S;Vintage;fiction
+300-0-0000214-0-6;Zen & The Art of Motorcycle Maintenance;Pirsig, Robert;Vintage;philosophy
+300-0-0000214-0-7;Great War for Civilization, The;Fisk, Robert;HarperCollins;nonfiction
+300-0-0000214-0-8;We the Living;Rand, Ayn;Penguin;fiction
+300-0-0000214-0-9;Artist and the Mathematician, The;Aczel, Amir;HighStakes;science
+200-0-0000311-0-2;History of Western Philosophy;Russell, Bertrand;Routledge;philosophy
+200-0-0000311-0-4;Rationality & Freedom;Sen, Amartya;Springer;science
+200-0-0000311-0-5;Clash of Civilizations and Remaking of the World Order;Huntington, Samuel;Simon&Schuster;nonfiction
+200-0-0000311-0-6;Uncommon Wisdom;Capra, Fritjof;Fontana;nonfiction
+200-0-0000311-0-7;One;Bach, Richard;Dell;nonfiction
+200-0-0000311-0-9;To Sir With Love;Braithwaite;Penguin;fiction
+289-0-0000315-0-2;Half A Life;Naipaul, V S;Penguin;fiction
+289-0-0000315-0-3;Discovery of India, The;Nehru, Jawaharlal;Penguin;nonfiction
+289-0-0000315-0-4;Apulki;Deshpande, P L;Penguin;nonfiction
+289-0-0000315-0-5;Unpopular Essays;Russell, Bertrand;Penguin;philosophy
+289-0-0000315-0-6;Deceiver, The;Forsyth, Frederick;Fontana;fiction
+289-0-0000315-0-7;Veil: Secret Wars of the CIA;Woodward, Bob;Penguin;nonfiction
+289-0-0000315-0-8;Char Shabda;Deshpande, P L;Penguin;nonfiction
+289-0-0000315-0-9;Rosy is My Relative;Durrell, Gerald;Fontana;fiction
+389-0-0000415-0-4;Short History of the World, A;Wells, H G;Penguin;nonfiction
+389-0-0000415-0-5;Trembling of a Leaf, The;Maugham, William S;Penguin;fiction
+389-0-0000415-0-6;Doctor on the Brain;Gordon, Richard;Random House;fiction
+389-0-0000415-0-7;Simpsons & Their Mathematical Secrets;Singh, Simon;Vintage;science
+389-0-0000515-0-3;Pattern Classification;Duda, Hart;Vintage;tech
+389-0-0000515-0-4;From Beirut to Jerusalem;Friedman, Thomas;Vintage;nonfiction
+389-0-0000515-0-5;Code Book, The;Singh, Simon;HarperCollins;science
+389-0-0000515-0-6;Age of the Warrior, The;Fisk, Robert;Penguin;nonfiction
+389-0-0006550-0-5;Life in Letters, A;Steinbeck, John;Penguin;nonfiction
+389-0-0006550-0-6;Information, The;Gleick, James;Penguin;science
+389-0-0006550-0-8;Elements of Information Theory;Thomas, Joy;Random House;tech
+389-0-0006550-0-9;Power Electronics - Rashid;Rashid, Muhammad;Vintage;tech
+389-0-0006850-0-2;Power Electronics - Mohan;Mohan, Ned;Penguin;tech
+389-0-0006850-0-3;Neural Networks;Haykin, Simon;Penguin;tech
+389-0-0006850-0-4;Grapes of Wrath, The;Steinbeck, John;Random House;fiction
+389-0-0006850-0-5;Vyakti ani Valli;Deshpande, P L;Vintage;nonfiction
+389-0-0006850-0-6;Statistical Learning Theory;Vapnik, Vladimir;Vintage;tech
+389-0-0006850-0-7;Empire of the Mughal - The Tainted Throne;Rutherford, Alex;Vintage;nonfiction
+389-0-0006850-0-8;Empire of the Mughal - Brothers at War;Rutherford, Alex;HarperCollins;nonfiction
+389-0-0006850-0-9;Empire of the Mughal - Ruler of the World;Rutherford, Alex;Penguin;nonfiction
+389-0-0062850-0-2;Empire of the Mughal - The Serpent's Tooth;Rutherford, Alex;Penguin;nonfiction
+389-0-0062850-0-3;Empire of the Mughal - Raiders from the North;Rutherford, Alex;Penguin;nonfiction
+389-0-0062850-0-4;Mossad;Baz-Zohar, Michael;Random House;nonfiction
+389-0-0062850-0-5;Jim Corbett Omnibus;Corbett, Jim;Penguin;nonfiction
+389-0-0062850-0-6;20000 Leagues Under the Sea;Verne, Jules;Penguin;fiction
+389-0-0062850-0-7;Batatyachi Chal;Deshpande P L;Random House;fiction
+389-0-0062850-0-8;Hafasavnuk;Deshpande P L;Vintage;fiction
+389-0-0062850-0-9;Urlasurla;Deshpande P L;Vintage;fiction
+500-0-0063850-0-2;Pointers in C;Kanetkar, Yashwant;Vintage;tech
+500-0-0063850-0-3;Cathedral and the Bazaar, The;Raymond, Eric;HarperCollins;tech
+500-0-0063850-0-4;Design with OpAmps;Franco, Sergio;Vintage;tech
+500-0-0063850-0-5;Think Complexity;Downey, Allen;Vintage;tech
+500-0-0063850-0-6;Devil's Advocate, The;West, Morris;Vintage;fiction
+500-0-0063850-0-7;Ayn Rand Answers;Rand, Ayn;HarperCollins;philosophy
+500-0-0063850-0-8;Philosophy: Who Needs It;Rand, Ayn;Vintage;philosophy
+501-0-0063950-0-3;Data Analysis with Open Source Tools;Janert, Phillip;Vintage;tech
+501-0-0063950-0-4;Broca's Brain;Sagan, Carl;Vintage;science
+501-0-0063950-0-5;Men of Mathematics;Bell, E T;HarperCollins;science
+501-0-0063950-0-6;Oxford book of Modern Science Writing;Dawkins, Richard;Vintage;science
+501-0-0063950-0-7;Justice, Judiciary and Democracy;Ranjan, Sudhanshu;Vintage;nonfiction
+501-0-0063950-0-8;Arthashastra, The;Kautiyla;Vintage;philosophy
+501-0-0063950-0-9;We the People;Palkhivala;HarperCollins;philosophy
+601-0-0073950-0-2;We the Nation;Palkhivala;Vintage;philosophy
+601-0-0073950-0-3;Courtroom Genius, The;Sorabjee;Vintage;nonfiction
+601-0-0073950-0-4;Dongri to Dubai;Zaidi, Hussain;Vintage;nonfiction
+601-0-0073950-0-5;History of England, Foundation;Ackroyd, Peter;HarperCollins;nonfiction
+601-0-0073950-0-6;City of Djinns;Dalrymple, William;Vintage;nonfiction
+601-0-0073950-0-7;India's Legal System;Nariman;Vintage;nonfiction
+601-0-0073950-0-8;More Tears to Cry;Sassoon, Jean;Vintage;fiction
+601-0-0073950-0-9;Ropemaker, The;Dickinson, Peter;HarperCollins;fiction
+604-0-0083950-0-2;Angels & Demons;Brown, Dan;Vintage;fiction
+604-0-0083950-0-5;Prince, The;Machiavelli;Vintage;fiction
+604-0-0083950-0-6;Eyeless in Gaza;Huxley, Aldous;Vintage;fiction
+604-0-0083950-0-7;Tales of Beedle the Bard;Rowling, J K;HarperCollins;fiction
+604-0-0083950-0-8;Girl with the Dragon Tattoo;Larsson, Steig;Vintage;fiction
+604-0-0083950-0-9;Girl who kicked the Hornet's Nest;Larsson, Steig;HarperCollins;fiction
+704-0-0083950-0-4;Girl who played with Fire;Larsson, Steig;Vintage;fiction
+704-0-0083950-0-7;Structure and Randomness;Tao, Terence;Vintage;science
+704-0-0083950-0-8;Image Processing with MATLAB;Eddins, Steve;Vintage;tech
+864-0-0083950-0-4;Animal Farm;Orwell, George;Vintage;fiction
+864-0-0083950-0-5;Idiot, The;Dostoevsky, Fyodor;Vintage;fiction
+864-0-0083950-0-6;Christmas Carol, A;Dickens, Charles;Vintage;fiction
