@@ -1,6 +1,2 @@
-﻿  User.cpp
-F:\Projects\DSA-PROJECT---ASSIGNMENT\DSA Project\User.cpp(32,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-F:\Projects\DSA-PROJECT---ASSIGNMENT\DSA Project\User.cpp(32,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  main.cpp
-  Generating Code...
+﻿  main.cpp
   DSA Project.vcxproj -> F:\Projects\DSA-PROJECT---ASSIGNMENT\DSA Project\x64\Debug\DSA Project.exe
