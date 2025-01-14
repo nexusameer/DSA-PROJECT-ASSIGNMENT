@@ -127,7 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DSA Project.cpp" />
+    <ClCompile Include="AdminApp.cpp" />
+    <ClCompile Include="AVLTree.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="WordNode.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Admin.h" />
+    <ClInclude Include="AdminApp.h" />
+    <ClInclude Include="AVLTree.h" />
+    <ClInclude Include="User.h" />
+    <ClInclude Include="WordNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
